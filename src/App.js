@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import  { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { initState } from './actions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Containers.
+import AmountContainer from './containers/amountContainer';
+import DurationContainer from './containers/durationContainer';
+import MonthlyContainer from './containers/monthlyContainer';
+import Switch from './components/switch';
+
+class App extends Component {
+
+  componentWillMount() {
+      this.props.initState();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <AmountContainer />
+        <DurationContainer />
+        <MonthlyContainer />
+        {/* <Switch /> */}
+      </div>
+    );
+  }
+
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    initState: () => {
+      dispatch(initState())
+    },
+  }}
+
+export default connect(null, mapDispatchToProps)(App);

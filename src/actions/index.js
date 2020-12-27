@@ -19,9 +19,9 @@ export function changeMonthly (e) {
     }
 }
 
-export function initState () {
+export function initState (initialData) {
     return {
         type: 'INIT',
-        payload: {}
+        payload: initialData
     }
 }

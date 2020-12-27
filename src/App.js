@@ -12,7 +12,10 @@ import Switch from './components/switch';
 class App extends Component {
 
   componentWillMount() {
-      this.props.initState();
+    this.props.initState({
+      'amount': this.props.amount,
+      'duration': this.props.duration
+    });
   }
 
   render() {
@@ -30,8 +33,8 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initState: () => {
-      dispatch(initState())
+    initState: (data) => {
+      dispatch(initState(data))
     },
   }}
 

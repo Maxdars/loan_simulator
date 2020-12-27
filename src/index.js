@@ -9,13 +9,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let root = document.getElementById('root');
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={createStore(reducers)}>
-      <App />
+      <App {...root.dataset}/>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  root
 );
 
 // If you want to start measuring performance in your app, pass a function

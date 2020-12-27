@@ -20,7 +20,10 @@ class AmountContainer extends Component {
 const mapStateToProps = reducers => {
     let state = reducers.simulator_reducers;
     return {
-        amount: state.amount
+        amount: state.amount,
+        min_amount: state.min_amount,
+        max_amount: state.max_amount,
+        amount_step: state.amount_step
     }
 }
 

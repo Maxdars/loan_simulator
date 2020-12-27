@@ -20,7 +20,10 @@ class DurationContainer extends Component {
 const mapStateToProps = reducers => {
     let state = reducers.simulator_reducers;
     return {
-        duration: state.duration
+        duration: state.duration,
+        min_duration: state.min_duration,
+        max_duration: state.max_duration,
+        duration_step: state.duration_step
     }
 }
 

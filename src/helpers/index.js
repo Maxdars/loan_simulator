@@ -14,6 +14,19 @@ export function updateAmountState(state, newAmount) {
 }
 
 /**
+ * Update the state when the interest changes.
+ */
+export function updateInterestState(state, newInterest) {
+    newInterest = Math.max(state.min_interest, Math.min(state.max_interest, newInterest));
+    let newState = {
+        'interest' : newInterest,
+        'monthly' : calculateMonthly(state.amount, state.duration, newInterest),
+    };
+
+    return newState;
+}
+
+/**
  * Update the state when the duration changes.
  */
 export function updateDurationState(state, newDuration) {

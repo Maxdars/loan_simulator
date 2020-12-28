@@ -12,6 +12,13 @@ export function changeDuration (e) {
     }
 }
 
+export function changeInterest (e) {
+    return {
+        type: 'CHANGE_INTEREST',
+        payload: e.target.value
+    }
+}
+
 export function changeMonthly (e) {
     return {
         type: 'CHANGE_MONTHLY',

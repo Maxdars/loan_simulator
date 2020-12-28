@@ -1,30 +1,27 @@
 import './App.css';
-import  { connect } from 'react-redux'
 import React, { Component } from 'react';
 import { initState } from './actions';
+import  { connect } from 'react-redux'
 
 // Containers.
-import AmountContainer from './containers/amountContainer';
-import DurationContainer from './containers/durationContainer';
-import MonthlyContainer from './containers/monthlyContainer';
-import Switch from './components/switch';
+import SimulatorContainer from './containers/simulatorContainer';
+import RecapContainer from './containers/recapContainer';
 
 class App extends Component {
 
   UNSAFE_componentWillMount() {
     this.props.initState({
       'amount': this.props.amount,
-      'duration': this.props.duration
+      'duration': this.props.duration,
+      'interest': this.props.interest
     });
   }
 
   render() {
     return (
-      <div className="simulator_container">
-        <AmountContainer />
-        <DurationContainer />
-        <MonthlyContainer />
-        {/* <Switch /> */}
+      <div className="App-container">
+        <SimulatorContainer {...this.props} />
+        <RecapContainer />
       </div>
     );
   }

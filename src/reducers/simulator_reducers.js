@@ -17,6 +17,9 @@ export default function (state = initialState, action) {
         case 'CHANGE_MONTHLY':  
             return Object.assign({}, state, helpers.updateMonthlyState(state, action.payload));
 
+        case 'CHANGE_INTEREST':  
+            return Object.assign({}, state, helpers.updateInterestState(state, action.payload));
+
         default:
             return state;
     }

@@ -11,5 +11,8 @@ export const config = {
     'min_monthly': '',
     'max_monthly': '',
     'monthlyStep': 1,
-    'interest': 0.08
+    'interest': 0.08,
+    'min_interest': 0.01,
+    'max_interest': 0.2,
+    'interest_step': 0.01
 }

@@ -9,18 +9,16 @@ import RecapContainer from './containers/recapContainer';
 
 class App extends Component {
 
-  UNSAFE_componentWillMount() {
+  render() {
     this.props.initState({
       'amount': this.props.amount,
       'duration': this.props.duration,
       'interest': this.props.interest
     });
-  }
 
-  render() {
     return (
       <div className="App-container">
-        <SimulatorContainer {...this.props} />
+        <SimulatorContainer />
         <RecapContainer />
       </div>
     );

@@ -1,6 +1,4 @@
-import  { connect } from 'react-redux'
 import React, { Component } from 'react';
-import { initState } from '..//actions';
 
 // Containers.
 import AmountContainer from './amountContainer';

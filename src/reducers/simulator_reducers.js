@@ -3,7 +3,7 @@ import { config } from '../config/config'
 
 let initialState = config;
 
-export default function (state = initialState, action) {
+const simulator_reducers = (state = initialState, action) => {
     switch (action.type) {
         case 'INIT':
             return Object.assign({}, state, initialState, action.payload, helpers.initMonthlyState(state));
@@ -24,3 +24,5 @@ export default function (state = initialState, action) {
             return state;
     }
 }
+
+export default simulator_reducers;

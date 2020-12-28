@@ -1,5 +1,3 @@
-const { range } = require("lodash")
-
 const Range = (props) => {
     return (
         <input 

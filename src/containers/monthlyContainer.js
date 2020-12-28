@@ -20,7 +20,10 @@ class MonthlyContainer extends Component {
 const mapStateToProps = reducers => {
     let state = reducers.simulator_reducers;
     return {
-        monthly: state.monthly
+        monthly: state.monthly,
+        min_monthly: state.min_monthly,
+        max_monthly: state.max_monthly,
+        monthlyStep: state.monthlyStep
     }
 }
 

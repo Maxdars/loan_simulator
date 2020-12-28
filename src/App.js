@@ -11,7 +11,7 @@ import Switch from './components/switch';
 
 class App extends Component {
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.initState({
       'amount': this.props.amount,
       'duration': this.props.duration
@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="simulator_container">
         <AmountContainer />
         <DurationContainer />
         <MonthlyContainer />

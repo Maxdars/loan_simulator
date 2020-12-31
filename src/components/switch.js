@@ -7,6 +7,7 @@ const Switch = (props) => {
                 checked = { props.value } 
                 onChange = { props.onChange }
             />
+            <span> { props.label } </span>
         </div>
     )
 };

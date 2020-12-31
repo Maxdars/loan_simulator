@@ -9,7 +9,7 @@ const options_reducers = (state = initialState, action) => {
             return Object.assign({}, state, helpers.updateProfileOptionState(state, action.payload));
 
         case 'TOGGLE_OPEN':
-            return Object.assign({}, state, helpers.updateAmountState(state, action.payload));
+            return Object.assign({}, state, helpers.updateOpenOptionState(state, action.payload));
 
         default:
             return state;

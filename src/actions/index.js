@@ -40,6 +40,13 @@ export function toggleProfileOption (e) {
     }
 }
 
+export function toggleOpenOption (e) {
+    return {
+        type: 'TOGGLE_OPEN',
+        payload: e.target.value
+    }
+}
+
 export function initState (initialData) {
     return {
         type: 'INIT',

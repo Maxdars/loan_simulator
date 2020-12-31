@@ -26,6 +26,20 @@ export function changeMonthly (e) {
     }
 }
 
+export function changeProfile (e) {
+    return {
+        type: 'CHANGE_PROFILE',
+        payload: e.target.value
+    }
+}
+
+export function toggleProfileOption (e) {
+    return {
+        type: 'TOGGLE_PROFIL',
+        payload: e.target.value
+    }
+}
+
 export function initState (initialData) {
     return {
         type: 'INIT',

@@ -1,5 +1,23 @@
 import { calculateMonthly, calculateAmount, calculateDuration } from '../helpers/calculator';
-import { find } from 'lodash';
+import { find as _find } from 'lodash';
+
+/**
+ * Update the state when the profile changes.
+ */
+export function updateProfileState(state, newProfile) {
+    let newState = {'profile' : newProfile};
+
+    let newProfileOptions = _find(state.profiles, (profile) => {return profile.id === state.profile});
+    newState.min_amount = newProfileOptions.min_amount;
+    newState.max_amount = newProfileOptions.max_amount;
+    newState.min_duration = newProfileOptions.min_duration;
+    newState.max_duration = newProfileOptions.max_duration;
+    newState.amount = Math.max(newState.min_amount, Math.min(newState.max_amount, state.amount));
+    newState.duration = Math.max(newState.min_duration, Math.min(newState.max_duration, state.duration));
+    newState.monthly = calculateMonthly(newState.amount, newState.duration, state.interest);
+
+    return newState;
+}
 
 /**
  * Update the state when the amount changes.
@@ -72,12 +90,14 @@ export function initMonthlyState(state) {
 /**
  * Update the state when the amount changes.
  */
-export function updateProfileOptionState(state, useProfile) {                                                                                                            
-    let newState = {'use_profile': useProfile};
-    let profiles = state.profiles
-    let currentProfile = find(profiles, (profile) => {return profile.id === state.profile});
+export function updateProfileOptionState(state, useProfile) { 
+    useProfile = state.use_profiles ? 0 : 1;
 
-    if (parseInt(useProfile) === 1) {
+    let newState = {'use_profiles': useProfile},
+        profiles = state.profiles,
+        currentProfile = _find(profiles, (profile) => {return profile.id === state.profile});
+
+    if (useProfile === 1) {
         newState.min_amount = currentProfile.min_amount;
         newState.max_amount = currentProfile.min_amount.max_amount;
         newState.min_duration = currentProfile.min_amount.min_duratyion;
@@ -86,6 +106,8 @@ export function updateProfileOptionState(state, useProfile) {
 
         let newDuration = Math.max(newState.min_duration, Math.min(newState.max_duration, state.duration));
         let newAmount = Math.max(newState.min_amount, Math.min(newState.max_amount, state.amount));
+        newState.amount = newAmount;
+        newState.duration = newDuration;
         newState.monthly = calculateMonthly(newAmount, newDuration, state.interest);
     }
 

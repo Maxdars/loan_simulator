@@ -20,6 +20,9 @@ const simulator_reducers = (state = initialState, action) => {
         case 'CHANGE_INTEREST':  
             return Object.assign({}, state, helpers.updateInterestState(state, action.payload));
 
+        case 'CHANGE_PROFILE':  
+            return Object.assign({}, state, helpers.updateProfileState(state, action.payload));
+
         default:
             return state;
     }

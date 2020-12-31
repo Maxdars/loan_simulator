@@ -5,6 +5,7 @@ import  { connect } from 'react-redux'
 
 // Containers.
 import SimulatorContainer from './containers/simulatorContainer';
+import OptionsContainer from './containers/optionsContainer';
 import RecapContainer from './containers/recapContainer';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
 
     return (
       <div className="App-container">
+        <OptionsContainer />
         <SimulatorContainer />
         <RecapContainer />
       </div>

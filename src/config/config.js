@@ -28,7 +28,7 @@ export const config = {
         },
         {
             'id': 'contractor',
-            'label': 'Company',
+            'label': 'Contractor',
             'min_amount': 10000,
             'max_amount': 500000,
             'min_duration': 12,
@@ -36,11 +36,11 @@ export const config = {
         },
         {
             'id': 'employee',
-            'label': 'Company',
+            'label': 'Employee',
             'min_amount': 6000,
             'max_amount': 150000,
             'min_duration': 6,
-            'max_duration': 84
+            'max_duration': 114
         }
     ],
     'fixed_amounts': [5000, 10000, 50000, 100000, 250000],

@@ -45,7 +45,7 @@ export const config = {
     ],
     'fixed_amounts': [5000, 10000, 50000, 100000, 250000],
     'fixed_durations': [12, 24, 48, 62, 84],
-    'fixed_interests': [12, 24, 48, 62, 84],
-    'open_simulator': 0,
+    'fixed_interests': [.05, .07, .08, .09, .1],
+    'open_simulator': 1,
     'use_profiles': 0
 }

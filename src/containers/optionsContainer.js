@@ -16,7 +16,7 @@ class OptionsContainer extends Component {
         />
         <Switch 
             label = 'Show fixed choices'
-            value = { parseInt(this.props.open_simulator) }
+            value = { !parseInt(this.props.open_simulator) }
             onChange =  { this.props.toggleOpenOption }
         />
       </div>
@@ -25,7 +25,7 @@ class OptionsContainer extends Component {
 }
 
 const mapStateToProps = reducers => {
-    let state = reducers.options_reducers;
+    let state = reducers.simulator_reducers;
     return {
         use_profiles: state.use_profiles,
         open_simulator: state.open_simulator

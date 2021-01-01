@@ -24,7 +24,7 @@ class SimulatorContainer extends Component {
 }
 
 const mapStateToProps = reducers => {
-  let state = reducers.options_reducers;
+  let state = reducers.simulator_reducers;
   return {
     use_profiles: state.use_profiles
   }

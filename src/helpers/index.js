@@ -12,8 +12,17 @@ export function updateProfileState(state, newProfile) {
     newState.max_amount = newProfileOptions.max_amount;
     newState.min_duration = newProfileOptions.min_duration;
     newState.max_duration = newProfileOptions.max_duration;
-    newState.amount = Math.max(newState.min_amount, Math.min(newState.max_amount, state.amount));
-    newState.duration = Math.max(newState.min_duration, Math.min(newState.max_duration, state.duration));
+
+    if (state.open_simulator === 0) {
+        newState.duration = state.fixed_durations.includes(state.duration) ? state.duration : state.fixed_durations[0];
+        newState.amount = state.fixed_amounts.includes(state.amount) ? state.amount : state.fixed_amounts[0];
+        newState.interest = state.fixed_interests.includes(state.interest) ? state.interest : state.fixed_interests[0];
+    }
+    else {
+        newState.amount = Math.max(newState.min_amount, Math.min(newState.max_amount, state.amount));
+        newState.duration = Math.max(newState.min_duration, Math.min(newState.max_duration, state.duration));
+    }
+    
     newState.monthly = calculateMonthly(newState.amount, newState.duration, state.interest);
 
     return newState;
@@ -49,6 +58,18 @@ export function updateOpenAmountState(state, newAmount) {
  */
 export function updateInterestState(state, newInterest) {
     newInterest = Math.max(state.min_interest, Math.min(state.max_interest, newInterest));
+    let newState = {
+        'interest' : newInterest,
+        'monthly' : calculateMonthly(state.amount, state.duration, newInterest),
+    };
+
+    return newState;
+}
+
+/**
+ * Update the state when the open interest changes.
+ */
+export function updateOpenInterestState(state, newInterest) {
     let newState = {
         'interest' : newInterest,
         'monthly' : calculateMonthly(state.amount, state.duration, newInterest),
@@ -124,16 +145,26 @@ export function updateProfileOptionState(state, useProfile) {
 
     if (useProfile === 1) {
         newState.min_amount = currentProfile.min_amount;
-        newState.max_amount = currentProfile.min_amount.max_amount;
-        newState.min_duration = currentProfile.min_amount.min_duratyion;
+        newState.max_amount = currentProfile.max_amount;
+        newState.min_duration = currentProfile.min_duration;
         newState.max_duration = currentProfile.max_duration;
         newState.profile_label = currentProfile.profile_label;
 
-        let newDuration = Math.max(newState.min_duration, Math.min(newState.max_duration, state.duration));
-        let newAmount = Math.max(newState.min_amount, Math.min(newState.max_amount, state.amount));
-        newState.amount = newAmount;
-        newState.duration = newDuration;
-        newState.monthly = calculateMonthly(newAmount, newDuration, state.interest);
+        if (state.open_simulator === 0) {
+            newState.duration = state.fixed_durations.includes(state.duration) ? state.duration : state.fixed_durations[0];
+            newState.amount = state.fixed_amounts.includes(state.amount) ? state.amount : state.fixed_amounts[0];
+            newState.interest = state.fixed_interests.includes(state.interest) ? state.interest : state.fixed_interests[0];
+        }
+        else {
+            let newDuration = Math.max(newState.min_duration, Math.min(newState.max_duration, state.duration));
+            let newAmount = Math.max(newState.min_amount, Math.min(newState.max_amount, state.amount));
+            newState.amount = newAmount;
+            newState.duration = newDuration;
+        }
+        
+        newState.monthly = calculateMonthly(newState.amount, newState.duration, state.interest);
+        newState.min_monthly = calculateMonthly(newState.min_amount, newState.max_duration, state.interest);
+        newState.max_monthly = calculateMonthly(newState.max_amount, newState.min_duration, state.interest);
     }
 
     return newState;
@@ -146,7 +177,7 @@ export function updateOpenOptionState(state, open_simulator) {
     open_simulator = state.open_simulator ? 0 : 1;
     let newState = {'open_simulator': open_simulator};
 
-    if (open_simulator === 1) {
+    if (open_simulator === 0) {
         newState.duration = state.fixed_durations.includes(state.duration) ? state.duration : state.fixed_durations[0];
         newState.amount = state.fixed_amounts.includes(state.amount) ? state.amount : state.fixed_amounts[0];
         newState.interest = state.fixed_interests.includes(state.interest) ? state.interest : state.fixed_interests[0];
@@ -156,6 +187,7 @@ export function updateOpenOptionState(state, open_simulator) {
         newState.amount = Math.max(state.min_amount, Math.min(state.max_amount, state.amount));
         newState.interest = Math.max(state.min_interest, Math.min(state.max_interest, state.interest));
     }
+
 
     newState.monthly = calculateMonthly(newState.amount, newState.duration, newState.interest);
 

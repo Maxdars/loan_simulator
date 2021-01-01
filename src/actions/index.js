@@ -12,9 +12,29 @@ export function changeDuration (e) {
     }
 }
 
+export function changeOpenAmount (e) {
+    return {
+        type: 'CHANGE_OPEN_AMOUNT',
+        payload: e.target.value
+    }
+}
+
+export function changeOpenDuration (e) {
+    return {
+        type: 'CHANGE_OPEN_DURATION',
+        payload: e.target.value
+    }
+}
+
 export function changeInterest (e) {
     return {
         type: 'CHANGE_INTEREST',
+        payload: e.target.value
+    }
+}
+export function changeOpenInterest (e) {
+    return {
+        type: 'CHANGE_OPEN_INTEREST',
         payload: e.target.value
     }
 }

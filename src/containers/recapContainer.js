@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class RecapContainer extends Component {
     render() {
         return (
-            <div>
+            <div className="recap_container">
                 <RecapElement 
                     label = 'Amount'
                     value = {this.props.amount}

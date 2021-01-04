@@ -18,10 +18,12 @@ class App extends Component {
     });
 
     return (
-      <div className="App-container">
-        <OptionsContainer />
-        <SimulatorContainer />
-        <RecapContainer />
+      <div className="app-container">
+        <section className="left_side_bar">
+          <OptionsContainer />
+          <RecapContainer />
+        </section>
+        < SimulatorContainer />
       </div>
     );
   }

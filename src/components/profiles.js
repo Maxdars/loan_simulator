@@ -2,7 +2,7 @@
 
 const Profiles = (props) => {
     return (
-        <div className="profile_component"> 
+        <div className="field_container"> 
             <select
                 id = 'profile-select'
                 name = 'profile'

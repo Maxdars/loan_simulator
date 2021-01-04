@@ -3,27 +3,29 @@ import Range from './range';
 const Duration = (props) => {
     if (props.open_simulator) {
         return (
-            <div className="duration_componenet"> 
-                <input 
+            <div className="field_container"> 
+                <div className="element_container">
+                    <span className="element_label"> Duration </span> 
+                    <span className="element_value"> {props.value} </span>
+                </div>
+                {/* <input 
                     type = 'text'
                     value = {props.value}
                     onChange = {props.changeDuration}
+                /> */}
+                <Range 
+                    minValue = {props.minValue}
+                    maxValue = {props.maxValue}
+                    step = {props.step}
+                    onChange = {props.changeDuration}
+                    defaultValue = {props.value}
                 />
-                <span>{props.minValue}</span>
-                    <Range 
-                        minValue = {props.minValue}
-                        maxValue = {props.maxValue}
-                        step = {props.step}
-                        onChange = {props.changeDuration}
-                        defaultValue = {props.value}
-                    />
-                <span>{props.maxValue}</span>
             </div>
         )
     }
     else {
         return (
-            <div className="duration_component"> 
+            <div className="field_container"> 
                 { props.fixed_durations.map((item) => (
                     <div className='radio-group' key={item}>
                         <input 

@@ -3,27 +3,30 @@ import Range from './range';
 const Amount = (props) => {
     if (props.open_simulator) {
         return (
-            <div className="amount_componenet"> 
-                <input 
+            <div className="field_container"> 
+                <div className="element_container">
+                    <span className="element_label"> Amount </span> 
+                    <span className="element_value"> {props.value} </span>
+                </div>
+                
+                {/* <input 
                     type = 'text'
                     value = {props.value}
                     onChange = {props.changeAmount}
+                /> */}
+                <Range 
+                    minValue = {props.minValue}
+                    maxValue = {props.maxValue}
+                    step = {props.step}
+                    onChange = {props.changeAmount}
+                    defaultValue = {props.value}
                 />
-                <span>{props.minValue}</span>
-                    <Range 
-                        minValue = {props.minValue}
-                        maxValue = {props.maxValue}
-                        step = {props.step}
-                        onChange = {props.changeAmount}
-                        defaultValue = {props.value}
-                    />
-                <span>{props.maxValue}</span>
             </div>
         )
     }
     else {
         return (
-            <div className="amount_componenet"> 
+            <div className="field_container"> 
                 { props.fixed_amounts.map((item) =>(
                     <div className='radio-group' key={item}>
                         <input 

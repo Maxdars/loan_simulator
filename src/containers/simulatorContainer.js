@@ -11,13 +11,13 @@ import ProfilesContainer from './profilesContainer';
 class SimulatorContainer extends Component {
   render() {
     return (
-      <div className="simulator_container">
+      <section className="simulator_container">
         { this.props.use_profiles ? <ProfilesContainer /> : '' }
         <AmountContainer />
         <DurationContainer />
         <InterestContainer />
         <MonthlyContainer />
-      </div>
+      </section>
     );
   }
 

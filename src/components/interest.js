@@ -3,27 +3,29 @@ import Range from './range';
 const Interest = (props) => {
     if (props.open_simulator) {
         return (
-            <div className="interest_component"> 
-                <input 
+            <div className="field_container"> 
+                <div className="element_container">
+                    <span className="element_label"> Interest </span> 
+                    <span className="element_value"> { `${(props.value * 100).toFixed(0)}%` }</span>
+                </div>
+                {/* <input 
                     type = 'text'
                     value = {props.value}
                     onChange = {props.changeInterest}
+                /> */}
+                <Range 
+                    minValue = {props.minValue}
+                    maxValue = {props.maxValue}
+                    step = {props.step}
+                    onChange = {props.changeInterest}
+                    defaultValue = {props.value}
                 />
-                <span>{ `${props.minValue * 100}%` }</span>
-                    <Range 
-                        minValue = {props.minValue}
-                        maxValue = {props.maxValue}
-                        step = {props.step}
-                        onChange = {props.changeInterest}
-                        defaultValue = {props.value}
-                    />
-                <span>{ `${props.maxValue * 100}%` }</span>
             </div>
         )
     }
     else {
         return (
-            <div className="interest_component"> 
+            <div className="field_container"> 
                 { props.fixed_interests.map((item) => (
                     <div className='radio-group' key={item}>
                         <input 

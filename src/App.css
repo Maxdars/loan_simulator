@@ -1,26 +1,45 @@
-.app-container {
-  display: flex;
-  /* text-align: start; */
-  /* align-items: stretch; */
-  justify-content: space-around;
+.row, .col, .container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+[class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.row, .container{
+  max-width : 100%
 }
 
 .left_side_bar {
-  background-color: antiquewhite;
-  display: inline-block;
-  border-right: solid 1px ;
-  width: 40%;
+  color: white;
+  background-color: #5c8ff5;
   height: 100%;
 }
 
 .simulator_container {
-  width: 100%;
+  background-color: #b8cefb;
   height: 100%;
-  background-color: cadetblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .fields_container {
+  padding: 10px;
+  border: solid 1px grey;
+  border-radius: 10px
 }
 
 .field_container {
@@ -54,4 +73,4 @@ input[type=range] {
   width:50px;
   border: solid 1px;
   border-radius: 5px;
-}
+} */

@@ -23,7 +23,7 @@ const Amount = (props) => {
                 />
             </div>
         )
-    }
+    } 
     else {
         return (
             <div className="field_container"> 

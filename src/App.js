@@ -1,7 +1,11 @@
 import './App.css';
 import React, { Component } from 'react';
 import { initState } from './actions';
-import  { connect } from 'react-redux'
+import  { connect } from 'react-redux';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 
 // Containers.
 import SimulatorContainer from './containers/simulatorContainer';
@@ -15,16 +19,29 @@ class App extends Component {
       'amount': this.props.amount,
       'duration': this.props.duration,
       'interest': this.props.interest
-    });
+    });       
 
+    // return (
+    //   <div className="app-container">
+    //     <section className="left_side_bar">
+    //       <OptionsContainer />
+    //       <RecapContainer />
+    //     </section>
+    //     < SimulatorContainer />
+    //   </div>
+    // );
     return (
-      <div className="app-container">
-        <section className="left_side_bar">
-          <OptionsContainer />
-          <RecapContainer />
-        </section>
-        < SimulatorContainer />
-      </div>
+      <Container className="app-containert">
+        <Row>
+          <Col xs={12} md={4} lg={4} className="left_side_bar">
+            <OptionsContainer />
+            <RecapContainer />
+          </Col>
+          <Col xs={12} md={8} lg={8} className="simulator_container">
+            <SimulatorContainer />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 

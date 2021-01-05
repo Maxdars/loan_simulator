@@ -1,6 +1,6 @@
 import { calculateMonthly, calculateAmount, calculateDuration } from '../helpers/calculator';
 import { find as _find } from 'lodash';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 /**
  * Update the state when the profile changes.
  */

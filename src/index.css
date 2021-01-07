@@ -1,6 +1,7 @@
 html, body {
   min-height:100%;
-font-size: 25px;
+  font-size: 20px;
+  background-color: #f1f2f6;
 }
 body {
   height: 100vh;

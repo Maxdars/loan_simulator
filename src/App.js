@@ -31,13 +31,13 @@ class App extends Component {
     //   </div>
     // );
     return (
-      <Container className="app-containert">
+      <Container className="app-container container w-100 h-80 border mt-4 mb-4 p-4 rounded shadow">
         <Row>
           <Col xs={12} md={4} lg={4} className="left_side_bar">
             <OptionsContainer />
             <RecapContainer />
           </Col>
-          <Col xs={12} md={8} lg={8} className="simulator_container">
+          <Col xs={12} md={8} lg={8} className="simulator_container border shadow">
             <SimulatorContainer />
           </Col>
         </Row>

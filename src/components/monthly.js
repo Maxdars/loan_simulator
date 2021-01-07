@@ -1,11 +1,18 @@
-import Range from './range';
+// import Range from './range';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const Monthly = (props) => {
     return (
-        <div className="field_container">
+        <Container className="field_container">
+            <Row>
+                <Col><span className="element_label"> Monthly </span></Col>
+                <Col><span className="element_value"> {props.value} </span></Col>
+            </Row>
             <div className="element_container">
-                <span className="element_label"> Monthly </span> 
-                <span className="element_value"> {props.value} </span>
+                 
+                
             </div>
             {/* <input 
                 type = 'text'
@@ -21,7 +28,7 @@ const Monthly = (props) => {
                     defaultValue = {props.value}
                 />
             <span>{props.maxValue}</span> */}
-        </div>
+        </Container>
     )
 }
 

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleProfileOption, toggleOpenOption } from '../actions'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 
 // Containers.
 import Switch from '../components/switch';
@@ -8,18 +12,26 @@ import Switch from '../components/switch';
 class OptionsContainer extends Component {
   render() {
     return (
-      <div className="options_container">
-        <Switch 
-            label = 'Show profiles'
-            value = { parseInt(this.props.use_profiles) }
-            onChange =  { this.props.toggleProfileOption }
-        />
-        <Switch 
-            label = 'Show fixed choices'
-            value = { !parseInt(this.props.open_simulator) }
-            onChange =  { this.props.toggleOpenOption }
-        />
-      </div>
+      <Container className="options_container border shadow rounded">
+        <Row className="options_row">
+          <Col>
+            <Switch 
+                label = 'Show profiles'
+                value = { parseInt(this.props.use_profiles) }
+                onChange =  { this.props.toggleProfileOption }
+            />
+          </Col>
+        </Row>
+        <Row className="options_row">
+          <Col>
+            <Switch 
+                label = 'Show fixed choices'
+                value = { !parseInt(this.props.open_simulator) }
+                onChange =  { this.props.toggleOpenOption }
+            />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

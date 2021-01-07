@@ -1,5 +1,3 @@
-import ToggleButton from 'react-bootstrap/ToggleButton'
-
 const Switch = (props) => {
 
     return (

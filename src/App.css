@@ -1,76 +1,11 @@
-.row, .col, .container {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.app-container {
+  background-color: #4d6bff66;
 }
 
-[class*="col-"] {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+.options_container, .recap_container, .simulator_container {
+  background-color: #f1f2f6;
 }
 
-.row, .container{
-  max-width : 100%
+.recap_container {
+  font-size: 15px;
 }
-
-.left_side_bar {
-  color: white;
-  background-color: #5c8ff5;
-  height: 100%;
-}
-
-.simulator_container {
-  background-color: #b8cefb;
-  height: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .fields_container {
-  padding: 10px;
-  border: solid 1px grey;
-  border-radius: 10px
-}
-
-.field_container {
-  width: 500px;
-}
-
-.field_container, .element_container {
-  display: block;
-}
-
-.element_container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.range_container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.range_limit {
-  font-size: 10px;
-}
-
-input[type=range] {
-  width: 60%;
-}
-
-.element_value {
-  text-align: center;
-  width:50px;
-  border: solid 1px;
-  border-radius: 5px;
-} */

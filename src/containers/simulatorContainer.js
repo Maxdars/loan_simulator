@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
 
 // Containers.
 import AmountContainer from './amountContainer';
@@ -11,13 +13,13 @@ import ProfilesContainer from './profilesContainer';
 class SimulatorContainer extends Component {
   render() {
     return (
-      <div className="fields_container">
-        { this.props.use_profiles ? <ProfilesContainer /> : '' }
-        <AmountContainer />
-        <DurationContainer />
-        <InterestContainer />
-        <MonthlyContainer />
-      </div>
+      <Container className="fields_container">
+        { this.props.use_profiles ? <Row><ProfilesContainer /></Row> : '' }
+        <Row><AmountContainer /></Row>
+        <Row><DurationContainer /></Row>
+        <Row><InterestContainer /></Row>
+        <Row><MonthlyContainer /></Row>
+      </Container>
     );
   }
 

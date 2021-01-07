@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import RecapElement from '../components/recapElement';
 import { connect } from 'react-redux';
+import Container from 'react-bootstrap/Container';
 
 class RecapContainer extends Component {
     render() {
         return (
-            <div className="recap_container">
+            <Container className="recap_container mt-5 border shadow rounded">
                 <RecapElement 
                     label = 'Amount'
                     value = {this.props.amount}
@@ -22,7 +23,7 @@ class RecapContainer extends Component {
                     label = 'Monthly Payment'
                     value = {this.props.monthly}
                 />
-            </div>
+            </Container>
         )
     }
 }

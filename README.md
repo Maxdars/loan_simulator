@@ -13,7 +13,7 @@
 This app provides a loan simulator, with a couple of modes and a recap block.
  
 ## Technologies
-* [ReactJs](https://react-bootstrap.github.io/)
+* [ReactJs](https://en.reactjs.org/)
 * [React bootstrap](https://react-bootstrap.github.io/)
 
 ## Setup

@@ -6,7 +6,7 @@ const Range = (props) => {
     return (
         <Container className="range_container">
             <Row>
-                <Col><span className="range_limit d-flex justify-content-end font-weight-light small">{props.minValue}</span></Col>
+                <Col><span className="range_limit d-flex justify-content-end font-weight-light small">{ props.type === 'interest' ? `${(props.minValue * 100).toFixed(0)}%` : props.minValue }</span></Col>
                 <Col className="d-flex col-8">
                     <input  
                         type = "range"
@@ -18,7 +18,7 @@ const Range = (props) => {
                         className = 'd-flex-fill w-100'
                     />
                 </Col>
-                <Col> <span className="range_limit font-weight-light small">{props.maxValue}</span></Col>
+                <Col> <span className="range_limit font-weight-light small">{ props.type === 'interest' ? `${(props.maxValue * 100).toFixed(0)}%` : props.maxValue }</span></Col>
                
             </Row>
         </Container>

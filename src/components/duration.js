@@ -18,6 +18,7 @@ const Duration = (props) => {
                         step = {props.step}
                         onChange = {props.changeDuration}
                         defaultValue = {props.value}
+                        type = 'duration'
                     />
                 </Row>
             </Container>

@@ -18,6 +18,7 @@ const Interest = (props) => {
                         step = {props.step}
                         onChange = {props.changeInterest}
                         defaultValue = {props.value}
+                        type = 'interest'
                     />
                 </Row>
             </Container>

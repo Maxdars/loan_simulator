@@ -10,16 +10,7 @@ const Switch = (props) => {
             />
             <span> { props.label } </span>
         </div>
-        // <ToggleButton
-        //     checked = { props.value }
-        //     type = 'checkbox'
-        //     id = { props.label }
-        //     label = { props.label }
-        //     onChange = { props.onChange }
-        // >
-        //     { props.label } 
-        // </ToggleButton>
-            
+        
     )
 };
 

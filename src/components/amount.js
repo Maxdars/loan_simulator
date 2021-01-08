@@ -18,6 +18,7 @@ const Amount = (props) => {
                         step = {props.step}
                         onChange = {props.changeAmount}
                         defaultValue = {props.value}
+                        type = 'amount'
                     />
                 </Row>
             </Container>

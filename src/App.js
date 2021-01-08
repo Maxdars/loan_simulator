@@ -22,7 +22,7 @@ class App extends Component {
     });       
 
     return (
-      <Container className="app-container container w-100 border mt-4 p-4 rounded shadow">
+      <Container className="app-container container w-100 border p-4 rounded shadow">
         <Row>
           <Col xs={12} md={4} lg={4} className="left_side_bar mb-4 mb-md-0 d-flex align-items-start flex-column">
             <OptionsContainer />

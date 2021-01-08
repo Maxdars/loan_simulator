@@ -11,7 +11,7 @@ const Profiles = (props) => {
             <Row>
                 <Col className="d-flex justify-content-center">
                     <select
-                        className = "form-control-sm w-75"
+                        className = "form-control-sm w-75 shadow-sm"
                         id = 'profile-select'
                         name = 'profile'
                         value = {props.value}

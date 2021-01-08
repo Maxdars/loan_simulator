@@ -8,10 +8,10 @@ import Col from 'react-bootstrap/Col';
 class RecapContainer extends Component {
     render() {
         return (
-            <Container className="recap_container border shadow rounded ">
-                <Row className="recap_row border-bottom bg-primary">
+            <Container className="recap_container border shadow rounded-top">
+                {/* <Row className="recap_row border-bottom bg-primary rounded-top">
                     <Col className="d-flex justify-content-center font-weight-bold recap-header"> Recap </Col>
-                </Row>
+                </Row> */}
                 <RecapElement 
                     label = 'Amount'
                     value = {this.props.amount}

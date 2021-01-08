@@ -7,15 +7,10 @@ const Interest = (props) => {
     if (props.open_simulator) {
         return (
             <Container className="field_container"> 
-                <Row>
-                    <Col><span className="element_label"> Interest </span></Col>
-                    <Col><span className="element_value"> { `${(props.value * 100).toFixed(0)}%` }</span></Col>
+                <Row className="d-flex justify-content-center">
+                    <Col><span> Interest </span></Col>
+                    <Col><span className="d-flex justify-content-end font-weight-bold"> { `${(props.value * 100).toFixed(0)}%` }</span></Col>
                 </Row>                     
-                                    {/* <input 
-                    type = 'text'
-                    value = {props.value}
-                    onChange = {props.changeInterest}
-                /> */}
                 <Row>
                     <Range 
                         minValue = {props.minValue}
@@ -32,11 +27,11 @@ const Interest = (props) => {
         return (
             <Container className="field_container"> 
                 <Row>
-                    <label> Interest </label>
+                    <Col><span> Interest </span></Col>
                 </Row>  
-                <Row>            
-                    { props.fixed_interests.map((item) => (
-                        <div className='form-check form-check-inline' key={item}>
+                <Row className='d-flex justify-content-center'>            
+                    { props.fixed_interests.map((item, index) => (
+                        <div className={`form-check form-check-inline ${index === 0 ? '' : 'border-left'} pl-2`} key={item}>
                             <input 
                                 className = "form-check-input"
                                 type = "radio" 

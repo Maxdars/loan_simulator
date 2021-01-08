@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import RecapElement from '../components/recapElement';
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class RecapContainer extends Component {
     render() {
         return (
-            <Container className="recap_container mt-5 border shadow rounded">
+            <Container className="recap_container border shadow rounded ">
+                <Row className="recap_row border-bottom bg-primary">
+                    <Col className="d-flex justify-content-center font-weight-bold recap-header"> Recap </Col>
+                </Row>
                 <RecapElement 
                     label = 'Amount'
                     value = {this.props.amount}

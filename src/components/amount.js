@@ -6,15 +6,10 @@ import Col from 'react-bootstrap/Col'
 const Amount = (props) => {
     if (props.open_simulator) {
         return (
-            <Container className="field_container w-100">
-                <Row>
-                    <Col><span className="element_label"> Amount </span></Col>
-                    <Col><span className="element_value"> {props.value} </span></Col>
-                    {/* <input 
-                        type = 'text'
-                        value = {props.value}
-                        onChange = {props.changeAmount}
-                    /> */}
+            <Container className="field_container mt-2">
+                <Row className="d-flex justify-content-center">
+                    <Col><span> Amount </span></Col>
+                    <Col><span className="d-flex justify-content-end font-weight-bold"> {props.value} </span></Col>
                 </Row>
                 <Row>
                     <Range 
@@ -30,13 +25,13 @@ const Amount = (props) => {
     } 
     else {
         return (
-            <Container className="field_container"> 
+            <Container className="field_container mt-2"> 
                 <Row>
-                    <label> Amount </label>
+                    <Col><span> Amount </span></Col>
                 </Row>
-                <Row>
-                    { props.fixed_amounts.map((item) =>(
-                        <div className='form-check form-check-inline' key={item}>
+                <Row className='d-flex justify-content-center'>
+                    { props.fixed_amounts.map((item, index) =>(
+                        <div className={`form-check form-check-inline ${index === 0 ? '' : 'border-left'} pl-2`} key={item}>
                              <input 
                                 className = "form-check-input"
                                 type = "radio" 

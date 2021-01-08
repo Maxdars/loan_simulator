@@ -21,19 +21,10 @@ class App extends Component {
       'interest': this.props.interest
     });       
 
-    // return (
-    //   <div className="app-container">
-    //     <section className="left_side_bar">
-    //       <OptionsContainer />
-    //       <RecapContainer />
-    //     </section>
-    //     < SimulatorContainer />
-    //   </div>
-    // );
     return (
-      <Container className="app-container container w-100 h-80 border mt-4 mb-4 p-4 rounded shadow">
+      <Container className="app-container container w-100 border mt-4 p-4 rounded shadow">
         <Row>
-          <Col xs={12} md={4} lg={4} className="left_side_bar">
+          <Col xs={12} md={4} lg={4} className="left_side_bar mb-4 mb-md-0 d-flex align-items-start flex-column">
             <OptionsContainer />
             <RecapContainer />
           </Col>

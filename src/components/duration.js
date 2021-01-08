@@ -7,16 +7,11 @@ const Duration = (props) => {
     if (props.open_simulator) {
         return (
             <Container className="field_container"> 
-                <Row>
-                    <Col><span className="element_label"> Duration </span> </Col>
-                    <Col><span className="element_value"> {props.value} </span></Col>
+                <Row className="d-flex justify-content-center">
+                    <Col><span> Duration </span> </Col>
+                    <Col><span className="d-flex justify-content-end font-weight-bold"> {props.value} </span></Col>
                 </Row>
                 <Row>
-                {/* <input 
-                    type = 'text'
-                    value = {props.value}
-                    onChange = {props.changeDuration}
-                /> */}
                     <Range 
                         minValue = {props.minValue}
                         maxValue = {props.maxValue}
@@ -32,11 +27,11 @@ const Duration = (props) => {
         return (
             <Container className="field_container"> 
                 <Row>
-                    <label> Duration </label>
+                    <Col><span> Duration </span> </Col>
                 </Row>  
-                <Row>          
-                    { props.fixed_durations.map((item) => (
-                        <div className='form-check form-check-inline' key={item}>
+                <Row className='d-flex justify-content-center'>          
+                    { props.fixed_durations.map((item, index) => (
+                        <div className={`form-check form-check-inline ${index === 0 ? '' : 'border-left'} pl-2`} key={item}>
                             <input 
                                 className = "form-check-input"
                                 type = "radio" 

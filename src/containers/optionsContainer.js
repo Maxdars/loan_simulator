@@ -12,7 +12,7 @@ import Switch from '../components/switch';
 class OptionsContainer extends Component {
   render() {
     return (
-      <Container className="options_container border shadow rounded">
+      <Container className="options_container border shadow rounded mb-auto">
         <Row className="options_row">
           <Col>
             <Switch 

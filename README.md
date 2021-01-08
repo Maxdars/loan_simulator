@@ -30,5 +30,5 @@ Then you can start the app by running
 * Show a recap of the current simulation
 
 ## Screenshots
-![Screenshot_1](./screenshots/loan_simulator.png)
-![Screenshot_2](./screenshots/loan_simulator_modes.png)
+![Screenshot_1](./screenshots/loan_simulator.PNG)
+![Screenshot_2](./screenshots/loan_simulator_modes.PNG)

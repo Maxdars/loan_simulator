@@ -17,11 +17,15 @@ This app provides a loan simulator, with a couple of modes and a recap block.
 * [React bootstrap](https://react-bootstrap.github.io/)
 
 ## Setup
-First, you need to install the necessary node modules by running
+First, you need to install the dependencies by running
 `yarn install`
 
 Then you can start the app by running
 `yarn start`
+
+The simulator data can be configured by editing the config file : 
+`src/config/config.js`
+
 
 ## Features
 * Calculate monthly payment 
